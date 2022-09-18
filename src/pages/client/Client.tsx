@@ -1,6 +1,8 @@
 import React from "react";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import { useGetOrdersQuery, useGetPizzasQuery } from "../../redux";
 import { TOrder, TPizza } from "../../types";
+import styles from "./index.module.scss";
 
 const Client = () => {
   const pizzas = useGetPizzasQuery();
@@ -9,11 +11,12 @@ const Client = () => {
   return (
     <div>
       <h1>ЗАКАЗ ПИЦЦЫ</h1>
-      <ul>
+      <div className={styles.cardGrid}>
         {pizzas?.data?.map((pizza: TPizza) => (
-          <li key={pizza.id}>{pizza.name}</li>
+          <ProductCard key={pizza.id} pizza={pizza} />
         ))}
-      </ul>
+      </div>
+
       <h2>Ваши заказы:</h2>
 
       {Array.isArray(orders?.data) ? (

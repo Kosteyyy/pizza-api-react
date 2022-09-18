@@ -1,6 +1,8 @@
 export type TPizza = {
   id: number;
   name: string;
+  img_url: string;
+  price: number;
   ingredients: string[];
 };
 
