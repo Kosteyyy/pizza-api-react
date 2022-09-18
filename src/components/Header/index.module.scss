@@ -1,0 +1,18 @@
+.content {
+  padding: 20px 0;
+  text-align: center;
+  nav a {
+    display: block;
+  }
+  @media (min-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    nav a {
+      display: inline;
+    }
+    nav a + a {
+      margin-left: 20px;
+    }
+  }
+}
