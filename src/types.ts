@@ -16,3 +16,10 @@ export enum OrderStatus {
   inProgress = "Доставляется",
   delivered = "Доставлен",
 }
+
+export type TDelivery = {
+  deliveryId: string;
+  pickupTime: string;
+  pickupAddress: string;
+  webhookUrl: string;
+};
