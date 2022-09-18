@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { PIZZA_API_URL } from "../const";
-import { TPizza } from "../types";
+import { TOrder, TPizza } from "../types";
 
 export const pizzaApi = createApi({
   reducerPath: "pizzaApi",
@@ -9,7 +9,10 @@ export const pizzaApi = createApi({
     getPizzas: builder.query<TPizza[], void>({
       query: (arg = undefined) => "pizzas",
     }),
+    getOrders: builder.query<TOrder[] | TOrder, string | void>({
+      query: (id) => `orders/${id ? id : ""}`,
+    }),
   }),
 });
 
-export const { useGetPizzasQuery } = pizzaApi;
+export const { useGetPizzasQuery, useGetOrdersQuery } = pizzaApi;

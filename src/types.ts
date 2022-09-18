@@ -3,3 +3,16 @@ export type TPizza = {
   name: string;
   ingredients: string[];
 };
+
+export type TOrder = {
+  orderId: string;
+  orderStatus: OrderStatus;
+  pizza: string;
+  address: string;
+};
+
+export enum OrderStatus {
+  pending = "Ожидает",
+  inProgress = "Доставляется",
+  delivered = "Доставлен",
+}
