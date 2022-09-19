@@ -11,6 +11,8 @@ export type TOrder = {
   orderStatus: OrderStatus;
   pizza: string;
   address: string;
+  time: number;
+  price: number;
 };
 
 export enum OrderStatus {

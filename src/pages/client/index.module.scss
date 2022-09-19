@@ -1,5 +1,9 @@
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+.wrapper {
+  margin-top: 3rem;
+  section {
+    margin: 2rem 0;
+  }
+  section + section {
+    margin-top: 4rem;
+  }
 }

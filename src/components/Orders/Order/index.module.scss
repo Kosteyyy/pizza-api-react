@@ -1,0 +1,43 @@
+.order {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .name {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  @media (min-width: 600px) {
+    .text {
+      display: flex;
+      flex: 1 1 100%;
+      .name {
+        flex: 1 1 100%;
+      }
+      .price {
+        flex: 0 0 100px;
+      }
+      .time {
+        flex: 0 0 200px;
+      }
+    }
+    .remove {
+      flex: 0 0 100px;
+      text-align: center;
+    }
+  }
+  .remove > .deleteBtn {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.7);
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: none;
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}

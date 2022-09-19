@@ -40,6 +40,10 @@ body {
   min-height: 100vh;
 }
 
+.App {
+  padding-bottom: 3rem;
+}
+
 h1 {
   font-size: 2em;
   font-weight: 700;
