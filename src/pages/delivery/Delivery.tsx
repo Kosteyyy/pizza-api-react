@@ -1,4 +1,5 @@
 import React from "react";
+import Deliveries from "../../components/Deliveries/Deliveries";
 import { useGetDeliveriesQuery } from "../../redux";
 import { TDelivery } from "../../types";
 
@@ -9,12 +10,7 @@ const Delivery = () => {
   return (
     <div>
       <h1>Доставка</h1>
-      <img src="https://pizza-api-react.vercel.app/img/pizza-01.jpg" alt="" />
-      <ul>
-        {deliveries?.data?.map((delivery: TDelivery) => (
-          <li key={delivery.deliveryId}>{delivery.pickupAddress}</li>
-        ))}
-      </ul>
+      <Deliveries />
     </div>
   );
 };

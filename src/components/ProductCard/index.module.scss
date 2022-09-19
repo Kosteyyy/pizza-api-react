@@ -12,6 +12,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    min-height: 3rem;
   }
   .image {
     // max-width: 100%;
@@ -30,8 +31,15 @@
     transform: scale(1.025);
     transition: 200ms transform ease-in-out;
   }
-  .footer {
+
+  .footer,
+  .description {
     margin-top: 1rem;
+  }
+  .btndiv {
+    min-width: 90px;
+    // background: red;
+    text-align: center;
   }
   .btn {
     background: hsl(200, 50%, 50%);
@@ -39,6 +47,7 @@
     border: none;
     padding: 0.5em 0.75em;
     border-radius: 0.25em;
+    font-size: 1rem;
     cursor: pointer;
     &:hover,
     &:active {

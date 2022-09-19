@@ -1,11 +1,17 @@
 import Orders from "../../components/Orders/Orders";
 import Pizzas from "../../components/Pizzas/Pizzas";
-import { useGetOrdersQuery, useGetPizzasQuery } from "../../redux";
+import {
+  useAddOrderMutation,
+  useGetOrdersQuery,
+  useGetPizzasQuery,
+} from "../../redux";
+import { TPizza } from "../../types";
 import styles from "./index.module.scss";
 
 const Client = () => {
   const pizzas = useGetPizzasQuery();
   const orders = useGetOrdersQuery();
+
   if (pizzas.isLoading || orders.isLoading) return <h1>Loading...</h1>;
   return (
     <div className={styles.wrapper}>
@@ -15,11 +21,7 @@ const Client = () => {
       </section>
       <section className={styles.orders}>
         <h2>Ваши заказы:</h2>
-        {Array.isArray(orders?.data) ? (
-          <Orders orders={orders.data} />
-        ) : (
-          <div>{orders?.data?.pizza}</div>
-        )}
+        {orders?.data ? <Orders orders={orders.data} /> : null}
       </section>
     </div>
   );

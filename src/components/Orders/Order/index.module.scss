@@ -12,7 +12,8 @@
     .text {
       display: flex;
       flex: 1 1 100%;
-      .name {
+      align-items: center;
+      .title {
         flex: 1 1 100%;
       }
       .price {
@@ -39,5 +40,8 @@
     &:active {
       transform: scale(1.1);
     }
+  }
+  .remove circle {
+    stroke: rgba(255, 0, 0, 0.7);
   }
 }

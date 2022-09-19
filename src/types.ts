@@ -11,12 +11,12 @@ export type TOrder = {
   orderStatus: OrderStatus;
   pizza: string;
   address: string;
-  time: number;
+  time: string;
   price: number;
 };
 
 export enum OrderStatus {
-  pending = "Ожидает",
+  pending = "Готовится",
   inProgress = "Доставляется",
   delivered = "Доставлен",
 }
@@ -26,4 +26,16 @@ export type TDelivery = {
   pickupTime: string;
   pickupAddress: string;
   webhookUrl: string;
+  deliveryStatus: string;
 };
+
+export type TUpdateDeliveryBody = {
+  id: string;
+  status: string;
+};
+
+export enum DeliveryStatus {
+  pending = "Курьер едет за товаром",
+  inProgress = "Доставляется",
+  delivered = "Доставлен",
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { TOrder } from "../../types";
+import { sortOrdersByDate } from "../../utils/sortOrders";
 import styles from "./index.module.scss";
 import Order from "./Order/Order";
 
@@ -8,6 +9,8 @@ interface IProps {
 }
 // Передаем список заказов сюда потому что список для клиента и пиццерии может быть разным, а рендер его один и тот же пока
 const Orders: React.FC<IProps> = ({ orders }) => {
+  const sortedOrders = sortOrdersByDate(orders);
+
   return (
     <div>
       <div className={styles.header}>
@@ -16,8 +19,8 @@ const Orders: React.FC<IProps> = ({ orders }) => {
         <div className={styles.price}>Цена</div>
         <div className={styles.remove}></div>
       </div>{" "}
-      {orders.map((order) => (
-        <Order order={order} />
+      {sortedOrders.map((order) => (
+        <Order key={order.orderId} order={order} />
       ))}
     </div>
   );
