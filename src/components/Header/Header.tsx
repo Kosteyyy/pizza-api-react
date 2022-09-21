@@ -6,9 +6,9 @@ import Menu from "./menu/Menu";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <div className={styles.wrapper}>
       <div className="container">
-        <div className={styles.content}>
+        <div className={styles.header}>
           <Link to="/">
             <img src={Logo} />
           </Link>

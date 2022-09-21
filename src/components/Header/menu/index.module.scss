@@ -1,0 +1,136 @@
+@import "../../../styles/const.scss";
+
+.nav {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  width: 100%;
+  background: $Header-bg;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: all 300ms ease;
+  padding: 1rem 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+
+  a {
+    color: $Header-links;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    &:hover {
+      color: $Header-links-hover;
+    }
+  }
+
+  &.visible {
+    transform: scale(1, 1);
+    transition: all 400ms ease-in-out;
+    a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms;
+    }
+  }
+  @media (min-width: 800px) {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+      li {
+        margin: 0;
+      }
+    }
+    transform: unset;
+    a {
+      opacity: 1;
+      position: relative;
+    }
+    a::before {
+      content: "";
+      display: block;
+      height: 5px;
+      background: $Header-links-hover;
+      position: absolute;
+      bottom: -0.3em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transform-origin: left;
+      transition: transform ease-in-out 250ms;
+    }
+    a:hover::before {
+      transform: scale(1, 1);
+    }
+  }
+}
+
+.toggleMenuButton {
+  position: absolute;
+  top: calc(50% - 11px);
+  right: 0;
+  margin-right: 3em;
+  min-height: 22px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  @media (min-width: 800px) {
+    display: none;
+  }
+}
+
+.toggleMenuButton span,
+.toggleMenuButton::before,
+.toggleMenuButton::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.toggleMenuButton::before,
+.toggleMenuButton::after {
+  content: "";
+  position: absolute;
+}
+
+.toggleMenuButton::before {
+  bottom: 17px;
+}
+.toggleMenuButton::after {
+  top: 17px;
+}
+
+.toggleMenuButton.visible span {
+  transform: scale(0);
+}
+.toggleMenuButton.visible::before {
+  bottom: 10px;
+  transform: rotate(45deg);
+}
+.toggleMenuButton.visible::after {
+  top: 10px;
+  transform: rotate(-45deg);
+}

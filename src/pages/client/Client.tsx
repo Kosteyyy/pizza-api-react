@@ -1,3 +1,4 @@
+import Loader from "../../components/Loader/Loader";
 import Orders from "../../components/Orders/Orders";
 import Pizzas from "../../components/Pizzas/Pizzas";
 import {
@@ -12,10 +13,10 @@ const Client = () => {
   const pizzas = useGetPizzasQuery();
   const orders = useGetOrdersQuery();
 
-  if (pizzas.isLoading || orders.isLoading) return <h1>Loading...</h1>;
   return (
-    <div className={styles.wrapper}>
-      <h1>ЗАКАЗ ПИЦЦЫ</h1>
+    <div className={`${styles.wrapper} container`}>
+      <h1>ЗАКАЗ ПИЦЦЫ {pizzas.isLoading && <Loader />}</h1>
+
       <section className={styles.pizzas}>
         {pizzas?.data ? <Pizzas pizzas={pizzas.data} /> : null}
       </section>

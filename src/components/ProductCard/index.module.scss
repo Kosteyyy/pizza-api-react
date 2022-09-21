@@ -1,3 +1,4 @@
+@import "../../styles/const.scss";
 .card {
   display: flex;
   flex-direction: column;
@@ -42,7 +43,7 @@
     text-align: center;
   }
   .btn {
-    background: hsl(200, 50%, 50%);
+    background: $Button;
     color: white;
     border: none;
     padding: 0.5em 0.75em;
@@ -51,7 +52,7 @@
     cursor: pointer;
     &:hover,
     &:active {
-      background: hsl(200, 50%, 60%);
+      background: $Button-hover;
     }
   }
   .footer {

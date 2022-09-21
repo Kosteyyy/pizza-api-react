@@ -1,18 +1,26 @@
-.content {
-  padding: 20px 0;
+@import "../../styles/const.scss";
+
+.wrapper {
   text-align: center;
-  nav a {
-    display: block;
+  background: $Header-bg;
+  :global(.container) {
+    padding: 0;
+  }
+  .header {
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+    width: 100%;
   }
   @media (min-width: 800px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    nav a {
-      display: inline;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    nav a + a {
-      margin-left: 20px;
+    :global(.container) {
+      padding: 0 20px;
     }
   }
 }

@@ -5,7 +5,7 @@ import { useGetOrdersQuery } from "../../redux";
 const Pizzeria = () => {
   const { data, isLoading } = useGetOrdersQuery();
   return (
-    <div>
+    <div className="container">
       <h1>Пиццерия</h1>
       <h2>Заказы</h2>
       {data ? <Orders orders={data} /> : null}

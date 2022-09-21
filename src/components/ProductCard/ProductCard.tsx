@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const ProductCard: React.FC<IProps> = ({ pizza }) => {
-  const [addOrder, { isLoading, isError }] = useAddOrderMutation();
+  const [addOrder, { isLoading, isError, isSuccess }] = useAddOrderMutation();
   const { refetch } = useGetDeliveriesQuery();
 
   const handleAddOrder = async (pizza: TPizza) => {
