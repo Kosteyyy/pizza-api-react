@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "пицца Пепперони с беконом",
+    "img_url": "https://pizza-api-react.vercel.app/img/pizza-01.jpg",
+    "ingredients": [
+      "томатный соус",
+      "сыр Моцарелла",
+      "грибы",
+      "бекон",
+      "огурцы маринованные"
+    ],
+    "price": 350
+  },
+  {
+    "id": 2,
+    "name": "Пицца 4 сыра",
+    "img_url": "https://pizza-api-react.vercel.app/img/pizza-02.jpg",
+    "ingredients": [
+      "римское тесто",
+      "сыр Моцарелла",
+      "сыр Пармезан",
+      "сыр Чеддер",
+      "козий сыр"
+    ],
+    "price": 420
+  },
+  {
+    "id": 3,
+    "name": "пицца Неаполетанская",
+    "img_url": "https://pizza-api-react.vercel.app/img/pizza-03.jpg",
+    "ingredients": ["томатный соус", "анчоусы", "оливки", "каперсы"],
+    "price": 370
+  },
+  {
+    "id": 4,
+    "name": "пицца Маргарита",
+    "img_url": "https://pizza-api-react.vercel.app/img/pizza-04.jpg",
+    "ingredients": ["томатный соус", "сыр Моцарелла"],
+    "price": 350
+  }
+]
